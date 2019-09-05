@@ -132,11 +132,7 @@ function articleMaker(news){
 
   let spanButton = document.createElement("span");
   spanButton.classList.add("expandButton");
-  spanButton.textContent = "Expand";
-  spanButton.style.background = "teal";
-  spanButton.style.padding = "20px";
-  spanButton.style.margin = "10px";
-  spanButton.style.color = "#fff";
+  spanButton.textContent = "Expand".toUpperCase();
 
   // Step 2
   spanButton.classList.add("article-open");
@@ -155,7 +151,7 @@ function articleMaker(news){
 
 
   // Step 3
-  return articleDiv;
+  return news;
 
 
 }
@@ -165,7 +161,10 @@ function articleMaker(news){
 // Step 3: return the entire component.
 
 // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
 const articles = data.map(articleMaker);
+
+
 // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 
