@@ -106,7 +106,9 @@ const data = [
 function articleMaker(news){
   // debugger;
 
-  // let {h2, p1, p2, p3, p4} = data;
+  // Step 1
+
+  // let {h2, p1, p2, p3, p4} = news;
   let article = document.createElement("article");
   
   let h2 = document.createElement("h2");
@@ -125,27 +127,39 @@ function articleMaker(news){
   let p4 = document.createElement("p");
   p4.textContent = news.thirdParagraph;
 
-  let button = document.createElement("button");
-  button.classList.add("expandButton");
+  let container = document.querySelector(".articles");
+  container.appendChild(article);
 
-  // article.appendChild("h2");
-  // article.appendChild("p1");
-  // article.appendChild("p2");
-  // article.appendChild("p3");
-  // article.appendChild("p4");
-  // article.appendChild("button");
+  let spanButton = document.createElement("span");
+  spanButton.classList.add("expandButton");
 
-  // let container = document.querySelector(".articles");
-  // container.appendChild("article");
-  
-  return news;
+  // Step 2
+  spanButton.classList.add("article-open");
+
+  spanButton.addEventListener('click', e => {
+    article.classList.toggle("article-open");
+  })
+
+
+  // Step 3
+  return article;
+
+  // article.appendChild(h2);
+  // article.appendChild(p1);
+  // article.appendChild(p2);
+  // article.appendChild(p3);
+  // article.appendChild(p4);
+  // article.appendChild(spanButton);
 
 }
 
 articleMaker(data);
 
-
 // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+
+
+
 
 // Step 3: return the entire component.
 
