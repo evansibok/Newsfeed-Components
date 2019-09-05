@@ -109,7 +109,7 @@ function articleMaker(news){
   // Step 1
 
   // let {h2, p1, p2, p3, p4} = news;
-  let article = document.createElement("article");
+  let articleDiv = document.createElement("div");
   
   let h2 = document.createElement("h2");
   h2.textContent = news.title;
@@ -128,43 +128,44 @@ function articleMaker(news){
   p4.textContent = news.thirdParagraph;
 
   let container = document.querySelector(".articles");
-  container.appendChild(article);
+  container.appendChild(articleDiv);
 
   let spanButton = document.createElement("span");
   spanButton.classList.add("expandButton");
+  spanButton.textContent = "Expand";
+  spanButton.style.background = "teal";
+  spanButton.style.padding = "20px";
+  spanButton.style.margin = "10px";
+  spanButton.style.color = "#fff";
 
   // Step 2
   spanButton.classList.add("article-open");
 
   spanButton.addEventListener('click', e => {
-    article.classList.toggle("article-open");
+    articleDiv.classList.toggle("article-open");
   })
 
 
-  // Step 3
-  return article;
+  articleDiv.appendChild(h2);
+  articleDiv.appendChild(p1);
+  articleDiv.appendChild(p2);
+  articleDiv.appendChild(p3);
+  articleDiv.appendChild(p4);
+  articleDiv.appendChild(spanButton);
 
-  // article.appendChild(h2);
-  // article.appendChild(p1);
-  // article.appendChild(p2);
-  // article.appendChild(p3);
-  // article.appendChild(p4);
-  // article.appendChild(spanButton);
+
+  // Step 3
+  return articleDiv;
+
 
 }
 
-articleMaker(data);
-
 // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-
-
-
 
 // Step 3: return the entire component.
 
 // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
+const articles = data.map(articleMaker);
 // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 
