@@ -42,6 +42,7 @@ function menuContent(arrayItems){
   let ul = document.createElement("ul");
   let li= document.createElement("li");
 
+  // Step 2
   menuItems.forEach((item) => {
     li = arrayItems[item];
     ul.appendChild(li);
