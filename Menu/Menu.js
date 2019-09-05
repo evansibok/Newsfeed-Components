@@ -38,8 +38,8 @@ let menuItems = [
 function menuContent(arrayItems){
   // debugger
 
-  let div = document.createElement("div");
-  div.classList.add("menu");
+  let menuDiv = document.createElement("div");
+  menuDiv.classList.add("menu");
   
   let ul = document.createElement("ul");
   let li = document.createElement("li");
@@ -50,17 +50,18 @@ function menuContent(arrayItems){
     ul.appendChild(li);
   })
 
-  div.appendChild(ul);
+  menuDiv.appendChild(ul);
 
   // Step 3
   let menuButton = document.querySelector(".menu-button");
   menuButton.classList.add("menu--open");
 
+  // Step 4
   menuButton.addEventListener('click', () => {
-    div.classList.toggle("menu--open");
+    menuDiv.classList.toggle("menu--open");
   })
   
-  return div;
+  return menuDiv;
 }
 
 menuContent(menuItems);
