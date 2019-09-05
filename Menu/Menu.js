@@ -36,17 +36,31 @@ let menuItems = [
 
 // Step 1
 function menuContent(arrayItems){
+  // debugger
+
   let div = document.createElement("div");
   div.classList.add("menu");
   
   let ul = document.createElement("ul");
-  let li= document.createElement("li");
+  let li = document.createElement("li");
 
   // Step 2
-  menuItems.forEach((item) => {
-    li = arrayItems[item];
+  arrayItems.forEach((item) => {
+    li.textContent = item;
     ul.appendChild(li);
   })
+
+  div.appendChild(ul);
+
+  // Step 3
+  let menuButton = document.querySelector(".menu-button");
+  menuButton.classList.add("menu--open");
+
+  menuButton.addEventListener('click', () => {
+    div.classList.toggle("menu--open");
+  })
   
-  return arrayItems;
+  return div;
 }
+
+menuContent(menuItems);
