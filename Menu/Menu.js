@@ -42,10 +42,10 @@ function menuContent(arrayItems){
   menuDiv.classList.add("menu");
   
   let ul = document.createElement("ul");
-  let li = document.createElement("li");
 
   // Step 2
-  arrayItems.map((item) => {
+  arrayItems.forEach((item) => {
+    let li = document.createElement("li");
     li.textContent = item;
     ul.appendChild(li);
   })
