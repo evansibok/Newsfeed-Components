@@ -45,7 +45,7 @@ function menuContent(arrayItems){
   let li = document.createElement("li");
 
   // Step 2
-  arrayItems.forEach((item) => {
+  arrayItems.map((item) => {
     li.textContent = item;
     ul.appendChild(li);
   })
@@ -60,6 +60,10 @@ function menuContent(arrayItems){
   menuButton.addEventListener('click', () => {
     menuDiv.classList.toggle("menu--open");
   })
+
+  //Step 5
+  let headerDiv = document.querySelector(".header");
+  headerDiv.appendChild(menuDiv);
   
   return menuDiv;
 }
