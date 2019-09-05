@@ -161,9 +161,6 @@ function articleMaker(news) {
   return news;
 }
 
-// Step 4
-const articles = data.map(articleMaker);
-
 // Step 5 --- DOESN'T WORK
 const newArticle = {
   title: "EV",
@@ -182,3 +179,6 @@ const newArticle = {
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
 };
 data.push(newArticle);
+
+// Step 4
+const articles = data.map(articleMaker);
