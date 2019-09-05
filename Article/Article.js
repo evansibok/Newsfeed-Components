@@ -146,7 +146,7 @@ function articleMaker(news) {
   // Step 2
   articleDiv.classList.add("article-open");
 
-  spanButton.addEventListener("click", e => {
+  spanButton.addEventListener("click", () => {
     articleDiv.classList.toggle("article-open");
   });
 

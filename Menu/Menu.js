@@ -61,7 +61,7 @@ function menuContent(arrayItems){
     menuDiv.classList.toggle("menu--open");
   })
 
-  //Step 5
+  //Step 5 & Step 6
   let headerDiv = document.querySelector(".header");
   headerDiv.appendChild(menuDiv);
   
