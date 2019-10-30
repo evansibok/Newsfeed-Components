@@ -54,6 +54,12 @@
   padding: 0;
   margin: 15px 0 0;
 }
+.article p:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+  float: right;
+  padding-right: 1em;
+}
 .article .date {
   margin: 0;
   font-size: 14px;
@@ -75,6 +81,9 @@
 }
 .article-open {
   height: 400px;
+}
+.hide {
+  display: none;
 }
 .menu-button {
   position: absolute;

@@ -136,6 +136,10 @@ function articleMaker(news) {
   let p4 = document.createElement("p");
   p4.textContent = news.thirdParagraph;
 
+  // New Code
+  let p5 = document.createElement("p");
+  p5.textContent = "X";
+
   let container = document.querySelector(".articles");
   container.appendChild(articleDiv);
 
@@ -150,6 +154,7 @@ function articleMaker(news) {
     articleDiv.classList.toggle("article-open");
   });
 
+  articleDiv.appendChild(p5);
   articleDiv.appendChild(h2);
   articleDiv.appendChild(p1);
   articleDiv.appendChild(p2);
