@@ -136,19 +136,25 @@ function articleMaker(news) {
   let p4 = document.createElement("p");
   p4.textContent = news.thirdParagraph;
 
-  // New Code
+  // NEW CODE - ADDING DELETE BUTTON FOR ARTICLE
   let p5 = document.createElement("p");
   p5.textContent = "X";
+  
+  p5.addEventListener("click", () => {
+    articleDiv.classList.toggle("hide");
+  })
+
 
   let container = document.querySelector(".articles");
   container.appendChild(articleDiv);
-
+  
   let spanButton = document.createElement("span");
   spanButton.classList.add("expandButton");
   spanButton.textContent = "Expand".toUpperCase();
-
+  
   // Step 2
   articleDiv.classList.add("article-open");
+  
 
   spanButton.addEventListener("click", () => {
     articleDiv.classList.toggle("article-open");
