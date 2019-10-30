@@ -161,7 +161,7 @@ function articleMaker(news) {
   return news;
 }
 
-// Step 5 --- DOESN'T WORK
+// Step 5 
 const newArticle = {
   title: "EV",
   date: "Jan 2nd, 2000",
