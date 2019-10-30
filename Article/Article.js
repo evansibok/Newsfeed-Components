@@ -136,20 +136,31 @@ function articleMaker(news) {
   let p4 = document.createElement("p");
   p4.textContent = news.thirdParagraph;
 
+  // NEW CODE - ADDING DELETE BUTTON FOR ARTICLE
+  let p5 = document.createElement("p");
+  p5.textContent = "X";
+  
+  p5.addEventListener("click", () => {
+    articleDiv.classList.toggle("hide");
+  })
+
+
   let container = document.querySelector(".articles");
   container.appendChild(articleDiv);
-
+  
   let spanButton = document.createElement("span");
   spanButton.classList.add("expandButton");
   spanButton.textContent = "Expand".toUpperCase();
-
+  
   // Step 2
   articleDiv.classList.add("article-open");
+  
 
   spanButton.addEventListener("click", () => {
     articleDiv.classList.toggle("article-open");
   });
 
+  articleDiv.appendChild(p5);
   articleDiv.appendChild(h2);
   articleDiv.appendChild(p1);
   articleDiv.appendChild(p2);
@@ -161,7 +172,7 @@ function articleMaker(news) {
   return news;
 }
 
-// Step 5 --- DOESN'T WORK
+// Step 5 
 const newArticle = {
   title: "EV",
   date: "Jan 2nd, 2000",
